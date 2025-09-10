@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://csn0sd2wpt662"]
+
+[ext_resource type="Script" uid="uid://s4wyjqgscgpm" path="res://main_menu_3d.gd" id="1_fm8yn"]
+[ext_resource type="FontFile" uid="uid://bsivt5a7aiug6" path="res://fonts/THSarabunNew.ttf" id="2_ft28b"]
+[ext_resource type="Texture2D" uid="uid://drh2rmlxb8sei" path="res://art/vecteezy_underwater-ocean-background-black-silhouettes-swimming-sea_8570732-1.jpg" id="2_phcvr"]
+
+[node name="MainMenu3D" type="Node3D"]
+script = ExtResource("1_fm8yn")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+shadow_bias = 0.04
+shadow_blur = 1.5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VecteezyUnderwater-ocean-background-black-silhouettes-swimming-sea8570732-1" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(572, 288)
+scale = Vector2(0.827604, 0.808036)
+texture = ExtResource("2_phcvr")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 63.0
+offset_top = 177.0
+offset_right = 1063.0
+offset_bottom = 312.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ft28b")
+theme_override_font_sizes/font_size = 50
+text = "ชื่อ นายญาณาธร บุญลือ รหัสนักศึกษา 663380033-8
+สาขา ปัญญาประดิษฐ์"
+horizontal_alignment = 1
+
+[node name="StartGame" type="Button" parent="CanvasLayer"]
+offset_left = 496.0
+offset_top = 361.0
+offset_right = 624.0
+offset_bottom = 438.0
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="Exit" type="Button" parent="CanvasLayer"]
+offset_left = 495.0
+offset_top = 464.0
+offset_right = 626.0
+offset_bottom = 541.0
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[connection signal="pressed" from="CanvasLayer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
