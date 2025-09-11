@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ha0ar5s2c3m4"]
+[gd_scene load_steps=8 format=3 uid="uid://ha0ar5s2c3m4"]
 
 [ext_resource type="Script" uid="uid://db48qhcxd4usg" path="res://Mob.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bicorb7we351t" path="res://art/mob.glb" id="2"]
-[ext_resource type="PackedScene" uid="uid://ndatu8o41lpp" path="res://art/Trout.glb" id="3_6frnq"]
 [ext_resource type="PackedScene" uid="uid://bbrqwjut7xk68" path="res://art/Crayfish.glb" id="4_gguu4"]
 
 [sub_resource type="BoxShape3D" id="1"]
@@ -63,27 +62,27 @@ shape = SubResource("1")
 
 [node name="CollisionShape2" type="CollisionShape3D" parent="."]
 transform = Transform3D(4.03902, 0, -2.94725, 0, 5, 0, 2.94725, 0, 4.03902, 0.459268, 0.695474, 1.23193)
+visible = false
 shape = SubResource("BoxShape3D_vll1l")
 
 [node name="CollisionShape3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.889494, 0.783785, 0.180726)
+visible = false
 shape = SubResource("BoxShape3D_vll1l")
 
 [node name="CollisionShape4" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.889494, 0.783785, 1.43697)
+visible = false
 shape = SubResource("BoxShape3D_vll1l")
 
 [node name="CollisionShape5" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.887008, 0.783785, 1.43697)
+visible = false
 shape = SubResource("BoxShape3D_vll1l")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062134, 0.331645)
 aabb = AABB(-1.19986, 0.251327, -1.57098, 2.41047, 1.09305, 3.17223)
-
-[node name="Trout" parent="." instance=ExtResource("3_6frnq")]
-transform = Transform3D(0.000121821, -0.00999926, 0, 0.00999926, 0.000121821, 0, 0, 0, 0.01, 0.587232, 0.8204, 0.793774)
-visible = false
 
 [node name="Crayfish2" parent="." instance=ExtResource("4_gguu4")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.00746369, 0.487455, 0.15863)
@@ -96,5 +95,4 @@ libraries = {
 autoplay = "float"
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_screen_exited"]
-[connection signal="visibility_changed" from="Trout" to="." method="_on_trout_visibility_changed"]
 [connection signal="visibility_changed" from="Crayfish2" to="." method="_on_crayfish_2_visibility_changed"]
