@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://ww4r2ge2ic4u" path="res://art/Fish.glb" id="3_kne1u"]
 
 [sub_resource type="SphereShape3D" id="1"]
-radius = 1.46167
+radius = 0.91368
 
 [sub_resource type="CylinderShape3D" id="2"]
-height = 0.554832
-radius = 0.901367
+height = 0.821847
+radius = 0.924805
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_76fa1"]
 height = 0.144
@@ -56,19 +56,21 @@ script = ExtResource("1")
 visible = false
 
 [node name="Character" parent="Pivot" instance=ExtResource("2")]
-transform = Transform3D(1, 0, 0, 0, 0.991165, 0.132638, 0, -0.132638, 0.991165, 0, 0.587315, 0)
+transform = Transform3D(1, 0, 0, 0, 0.987214, 0.1594, 0, -0.1594, 0.987214, 0, 0.348069, 0)
+visible = false
 
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30243, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.900911, 0)
 shape = SubResource("1")
 
 [node name="MobDetector" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0156674, 0, -0.850144)
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape" type="CollisionShape3D" parent="MobDetector"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0510262, 0.440417, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0199822, 0.918954, 0.869673)
 shape = SubResource("2")
 
 [node name="CollisionShape2" type="CollisionShape3D" parent="MobDetector"]

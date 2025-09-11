@@ -11,6 +11,7 @@ signal hit
 ## The downward acceleration when in the air, in meters per second.
 @export var fall_acceleration = 75
 
+var is_invincible: bool = false
 
 func _physics_process(delta):
 	var direction = Vector3.ZERO
@@ -44,7 +45,10 @@ func _physics_process(delta):
 	# the floor, walls, etc. when a collision happens the same frame.
 	velocity.y -= fall_acceleration * delta
 	move_and_slide()
-
+	
+	if is_on_floor():
+		is_invincible = false
+		
 	# Here, we check if we landed on top of a mob and if so, we kill it and bounce.
 	# With move_and_slide(), Godot makes the body move sometimes multiple times in a row to
 	# smooth out the character's motion. So we have to loop over all collisions that may have
@@ -59,6 +63,8 @@ func _physics_process(delta):
 				velocity.y = bounce_impulse
 				# Prevent this block from running more than once,
 				# which would award the player more than 1 point for squashing a single mob.
+				
+				is_invincible = true
 				break
 
 	# This makes the character follow a nice arc when jumping
@@ -66,6 +72,8 @@ func _physics_process(delta):
 
 
 func die():
+	if is_invincible:  # ถ้าอมตะ = ไม่ตาย
+		return
 	hit.emit()
 	queue_free()
 

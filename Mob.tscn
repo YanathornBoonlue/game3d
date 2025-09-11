@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://ha0ar5s2c3m4"]
+[gd_scene load_steps=9 format=3 uid="uid://ha0ar5s2c3m4"]
 
 [ext_resource type="Script" uid="uid://db48qhcxd4usg" path="res://Mob.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bicorb7we351t" path="res://art/mob.glb" id="2"]
 [ext_resource type="PackedScene" uid="uid://ndatu8o41lpp" path="res://art/Trout.glb" id="3_6frnq"]
+[ext_resource type="PackedScene" uid="uid://bbrqwjut7xk68" path="res://art/Crayfish.glb" id="4_gguu4"]
 
 [sub_resource type="BoxShape3D" id="1"]
-size = Vector3(2.31778, 1.08835, 4.26824)
+size = Vector3(2.31778, 0.638665, 3.9477)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vll1l"]
 size = Vector3(0.241028, 0.001, 0.833984)
@@ -44,7 +45,7 @@ _data = {
 }
 
 [node name="Mob" type="CharacterBody3D" groups=["mob"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0114588, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12837, 0)
 collision_layer = 2
 collision_mask = 2147483648
 script = ExtResource("1")
@@ -57,11 +58,7 @@ transform = Transform3D(1, 0, 0, 0, 0.987214, 0.1594, 0, -0.1594, 0.987214, 0, 0
 visible = false
 
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.479781, 0.75814, -0.385406)
-shape = SubResource("1")
-
-[node name="CollisionShape6" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.83529, 0, -0.54981, 0, 1, 0, 0.54981, 0, 0.83529, 0.0278123, 0.890845, 1.91695)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0380919, 0.87126, 0.148062)
 shape = SubResource("1")
 
 [node name="CollisionShape2" type="CollisionShape3D" parent="."]
@@ -90,6 +87,10 @@ aabb = AABB(-1.19986, 0.251327, -1.57098, 2.41047, 1.09305, 3.17223)
 
 [node name="Trout" parent="." instance=ExtResource("3_6frnq")]
 transform = Transform3D(0.000121821, -0.00999926, 0, 0.00999926, 0.000121821, 0, 0, 0, 0.01, 0.587232, 0.8204, 0.793774)
+visible = false
+
+[node name="Crayfish2" parent="." instance=ExtResource("4_gguu4")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.00746369, 0.487455, 0.15863)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 callback_mode_process = 0
@@ -100,3 +101,4 @@ autoplay = "float"
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_screen_exited"]
 [connection signal="visibility_changed" from="Trout" to="." method="_on_trout_visibility_changed"]
+[connection signal="visibility_changed" from="Crayfish2" to="." method="_on_crayfish_2_visibility_changed"]

@@ -36,3 +36,7 @@ func _on_visible_on_screen_notifier_screen_exited():
 
 func _on_trout_visibility_changed() -> void:
 	queue_free()
+
+
+func _on_crayfish_2_visibility_changed() -> void:
+	queue_free()
