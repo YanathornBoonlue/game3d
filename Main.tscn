@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://2y3ar4s86yra"]
+[gd_scene load_steps=16 format=3 uid="uid://2y3ar4s86yra"]
 
 [ext_resource type="Script" uid="uid://dn0kiywu3mkq7" path="res://Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dp478jyugrn7o" path="res://Player.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://ha0ar5s2c3m4" path="res://Mob.tscn" id="3"]
 [ext_resource type="Theme" uid="uid://cqquurjk1i7yw" path="res://ui_theme.tres" id="4_gnyca"]
 [ext_resource type="Script" uid="uid://ofhvwth8plpb" path="res://ScoreLabel.gd" id="6"]
+[ext_resource type="FontFile" uid="uid://bsivt5a7aiug6" path="res://fonts/THSarabunNew.ttf" id="6_3dxm6"]
 
 [sub_resource type="BoxShape3D" id="1"]
 size = Vector3(60, 2, 60)
@@ -158,8 +159,19 @@ theme_override_font_sizes/font_size = 32
 text = "Score: 0"
 script = ExtResource("6")
 
-[node name="Retry" type="ColorRect" parent="UserInterface"]
+[node name="Name" type="Label" parent="UserInterface"]
 layout_mode = 0
+offset_left = 15.0
+offset_top = 606.0
+offset_right = 435.0
+offset_bottom = 637.0
+theme_override_fonts/font = ExtResource("6_3dxm6")
+theme_override_font_sizes/font_size = 23
+text = "ชื่อ นายญาณาธร บุญลือ รหัสนักศึกษา 663380033-8 สาขา AI sec.2"
+
+[node name="Retry" type="ColorRect" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 0.447059)

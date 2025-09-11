@@ -9,7 +9,7 @@
 size = Vector3(2.31778, 0.638665, 3.9477)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vll1l"]
-size = Vector3(0.241028, 0.001, 0.833984)
+size = Vector3(0.241028, 0.001, 0.103515)
 
 [sub_resource type="Animation" id="2"]
 length = 1.2
@@ -62,23 +62,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0380919, 0.87126, 0.148062)
 shape = SubResource("1")
 
 [node name="CollisionShape2" type="CollisionShape3D" parent="."]
-transform = Transform3D(4.03902, 0, -2.94725, 0, 5, 0, 2.94725, 0, 4.03902, -0.617169, 0.695474, 2.70712)
-visible = false
+transform = Transform3D(4.03902, 0, -2.94725, 0, 5, 0, 2.94725, 0, 4.03902, 0.459268, 0.695474, 1.23193)
 shape = SubResource("BoxShape3D_vll1l")
 
 [node name="CollisionShape3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.889494, 0.783785, 0.180726)
-visible = false
 shape = SubResource("BoxShape3D_vll1l")
 
 [node name="CollisionShape4" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.889494, 0.783785, 1.43697)
-visible = false
 shape = SubResource("BoxShape3D_vll1l")
 
 [node name="CollisionShape5" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.887008, 0.783785, 1.43697)
-visible = false
 shape = SubResource("BoxShape3D_vll1l")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]

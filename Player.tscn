@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dp478jyugrn7o"]
+[gd_scene load_steps=10 format=3 uid="uid://dp478jyugrn7o"]
 
 [ext_resource type="Script" uid="uid://d1ilwo7xlp834" path="res://Player.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://d0ypm0v45pwdv" path="res://art/player.glb" id="2"]
@@ -9,11 +9,26 @@ radius = 0.91368
 
 [sub_resource type="CylinderShape3D" id="2"]
 height = 0.821847
-radius = 0.924805
+radius = 0.992676
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_76fa1"]
 height = 0.144
 radius = 0.2
+
+[sub_resource type="Animation" id="Animation_kne1u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root Scene:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.10843, -0.216421)]
+}
 
 [sub_resource type="Animation" id="3"]
 length = 1.2
@@ -42,9 +57,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-5.0326, 0, 0), Vector3(10, 0, 0), Vector3(-10, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Root Scene:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.15, 0.7, 2.8),
+"transitions": PackedFloat32Array(0.482968, 0.535887, 1),
+"update": 0,
+"values": [Vector3(0, -3.10843, -0.0523599), Vector3(0, -3.10843, 0.0523599), Vector3(0, -3.10843, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aq6tr"]
 _data = {
+&"RESET": SubResource("Animation_kne1u"),
 &"float": SubResource("3")
 }
 
@@ -56,7 +84,7 @@ script = ExtResource("1")
 visible = false
 
 [node name="Character" parent="Pivot" instance=ExtResource("2")]
-transform = Transform3D(1, 0, 0, 0, 0.987214, 0.1594, 0, -0.1594, 0.987214, 0, 0.348069, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999584, 0.0288407, 0, -0.0288407, 0.999584, 0, 0.336275, 0)
 visible = false
 
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
@@ -79,12 +107,12 @@ visible = false
 shape = SubResource("CylinderShape3D_76fa1")
 
 [node name="CollisionShape3" type="CollisionShape3D" parent="MobDetector"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.716365, 0.95, 1.71889)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0336712, 0.95, 0.984748)
 visible = false
 shape = SubResource("CylinderShape3D_76fa1")
 
 [node name="CollisionShape4" type="CollisionShape3D" parent="MobDetector"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.730546, 0.95, 1.69713)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.344868, 0.95, 1.01471)
 visible = false
 shape = SubResource("CylinderShape3D_76fa1")
 
@@ -93,14 +121,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45857, 0.95, 1.15318)
 visible = false
 shape = SubResource("CylinderShape3D_76fa1")
 
+[node name="Root Scene" parent="." instance=ExtResource("3_kne1u")]
+transform = Transform3D(-0.976135, -0.214617, -0.0331567, -0.214735, 0.976672, 0, 0.0323832, 0.00711991, -0.99945, 0.0446682, -4.76837e-07, -0.0638635)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 callback_mode_process = 0
 libraries = {
 &"": SubResource("AnimationLibrary_aq6tr")
 }
 autoplay = "float"
-
-[node name="Root Scene" parent="." instance=ExtResource("3_kne1u")]
-transform = Transform3D(-0.99944, 0, -0.0334518, 0, 1, 0, 0.0334518, 0, -0.99944, 0.0446682, -4.76837e-07, -0.0638635)
 
 [connection signal="body_entered" from="MobDetector" to="." method="_on_MobDetector_body_entered"]
