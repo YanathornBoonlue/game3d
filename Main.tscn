@@ -1,16 +1,26 @@
-[gd_scene load_steps=16 format=3 uid="uid://2y3ar4s86yra"]
+[gd_scene load_steps=23 format=3 uid="uid://2y3ar4s86yra"]
 
 [ext_resource type="Script" uid="uid://dn0kiywu3mkq7" path="res://Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dp478jyugrn7o" path="res://Player.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://ha0ar5s2c3m4" path="res://Mob.tscn" id="3"]
 [ext_resource type="Theme" uid="uid://cqquurjk1i7yw" path="res://ui_theme.tres" id="4_gnyca"]
+[ext_resource type="PackedScene" uid="uid://clkqffk6j1ma" path="res://art/underwater_enviro_coral.glb" id="4_lgr22"]
+[ext_resource type="PackedScene" uid="uid://2b0i8upolfb0" path="res://art/Rock.glb" id="5_03owx"]
 [ext_resource type="Script" uid="uid://ofhvwth8plpb" path="res://ScoreLabel.gd" id="6"]
 [ext_resource type="FontFile" uid="uid://bsivt5a7aiug6" path="res://fonts/THSarabunNew.ttf" id="6_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://bu1x6fcccr7ho" path="res://art/Anemone.glb" id="6_wkp8b"]
+[ext_resource type="PackedScene" uid="uid://be6k6ksmi7us6" path="res://art/Kelp.glb" id="7_5vvyt"]
+[ext_resource type="PackedScene" uid="uid://8qfomudyvyn6" path="res://art/kelp_3.glb" id="8_c6i3y"]
+[ext_resource type="PackedScene" uid="uid://cjhfh82uvhx5s" path="res://art/Orange Coral.glb" id="9_c2ibq"]
 
 [sub_resource type="BoxShape3D" id="1"]
 size = Vector3(60, 2, 60)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vvyt"]
+albedo_color = Color(0.272323, 0.584875, 0.820324, 1)
+
 [sub_resource type="BoxMesh" id="2"]
+material = SubResource("StandardMaterial3D_5vvyt")
 size = Vector3(60, 2, 60)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i5n5q"]
@@ -125,6 +135,150 @@ mesh = SubResource("3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 16)
 mesh = SubResource("3")
 
+[node name="underwater_enviro_coral" parent="." instance=ExtResource("4_lgr22")]
+transform = Transform3D(0.850591, 0, -0.525828, 0, 1, 0, 0.525828, 0, 0.850591, 12.1026, 1.139, -15.6135)
+
+[node name="underwater_enviro_coral2" parent="." instance=ExtResource("4_lgr22")]
+transform = Transform3D(0.850591, 0, -0.525828, 0, 1, 0, 0.525828, 0, 0.850591, -9.62266, 1.139, -15.6135)
+
+[node name="underwater_enviro_coral3" parent="." instance=ExtResource("4_lgr22")]
+transform = Transform3D(0.773033, 0, 0.634366, 0, 1, 0, -0.634366, 0, 0.773033, -12.5915, 1.139, -2.32096)
+
+[node name="underwater_enviro_coral4" parent="." instance=ExtResource("4_lgr22")]
+transform = Transform3D(0.773033, 0, 0.634366, 0, 1, 0, -0.634366, 0, 0.773033, -12.5915, 1.139, 11.6607)
+
+[node name="underwater_enviro_coral5" parent="." instance=ExtResource("4_lgr22")]
+transform = Transform3D(-0.764787, 0, 0.644284, 0, 1, 0, -0.644284, 0, -0.764787, -7.21872, 1.139, 15.4322)
+
+[node name="underwater_enviro_coral6" parent="." instance=ExtResource("4_lgr22")]
+transform = Transform3D(-0.764787, 0, 0.644284, 0, 1, 0, -0.644284, 0, -0.764787, 10.0637, 1.139, 15.4322)
+
+[node name="underwater_enviro_coral7" parent="." instance=ExtResource("4_lgr22")]
+transform = Transform3D(-0.718369, 0, -0.695662, 0, 1, 0, 0.695662, 0, -0.718369, 14.3457, 1.139, 11.2508)
+
+[node name="underwater_enviro_coral8" parent="." instance=ExtResource("4_lgr22")]
+transform = Transform3D(-0.718369, 0, -0.695662, 0, 1, 0, 0.695662, 0, -0.718369, 14.3457, 1.139, -4.14429)
+
+[node name="Rock" parent="." instance=ExtResource("5_03owx")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -12.6979, 0.0255221, 16.0077)
+
+[node name="Rock2" parent="." instance=ExtResource("5_03owx")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 14.428, 0.0255221, 16.0077)
+
+[node name="Rock3" parent="." instance=ExtResource("5_03owx")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 14.428, 0.0255221, -14.9292)
+
+[node name="Rock4" parent="." instance=ExtResource("5_03owx")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -13.0864, 0.0255221, -14.9292)
+
+[node name="Anemone" parent="." instance=ExtResource("6_wkp8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34739, 0.617473, -15.7695)
+
+[node name="Anemone2" parent="." instance=ExtResource("6_wkp8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.65813, 0.617473, -15.7695)
+
+[node name="Anemone3" parent="." instance=ExtResource("6_wkp8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4122, 0.617473, 3.81307)
+
+[node name="Anemone4" parent="." instance=ExtResource("6_wkp8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4743, 0.617473, 15.6744)
+
+[node name="Anemone5" parent="." instance=ExtResource("6_wkp8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7461, 0.617473, 7.19116)
+
+[node name="Kelp" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.513575, 1.11524, 15.8664)
+
+[node name="Kelp2" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42572, 1.11524, 15.8664)
+
+[node name="Kelp3" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(-0.0791376, 0, 0.996864, 0, 1, 0, -0.996864, 0, -0.0791376, 14.415, 1.11524, 4.71703)
+
+[node name="Kelp4" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(-0.0791376, 0, 0.996864, 0, 1, 0, -0.996864, 0, -0.0791376, 14.415, 1.11524, -10.9008)
+
+[node name="Kelp5" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(-0.0791376, 0, 0.996864, 0, 1, 0, -0.996864, 0, -0.0791376, 11.8999, 1.11524, -14.3011)
+
+[node name="Kelp6" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(-0.0791376, 0, 0.996864, 0, 1, 0, -0.996864, 0, -0.0791376, -10.8761, 1.11524, -13.8993)
+
+[node name="Kelp7" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(-0.964197, 0, 0.265186, 0, 1, 0, -0.265186, 0, -0.964197, -12.7187, 1.11524, -9.05541)
+
+[node name="Kelp8" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(0.543834, 0, -0.839193, 0, 1, 0, 0.839193, 0, 0.543834, -12.7187, 1.11524, 13.345)
+
+[node name="Kelp9" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(0.543834, 0, -0.839193, 0, 1, 0, 0.839193, 0, 0.543834, -9.5384, 1.11524, 15.5186)
+
+[node name="Kelp10" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(0.543834, 0, -0.839193, 0, 1, 0, 0.839193, 0, 0.543834, -2.31307, 1.11524, 15.5186)
+
+[node name="Kelp11" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(0.543834, 0, -0.839193, 0, 1, 0, 0.839193, 0, 0.543834, 0.882574, 1.11524, 15.5186)
+
+[node name="Kelp12" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(0.543834, 0, -0.839193, 0, 1, 0, 0.839193, 0, 0.543834, 12.4042, 1.11524, 14.4047)
+
+[node name="Kelp13" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(0.543834, 0, -0.839193, 0, 1, 0, 0.839193, 0, 0.543834, 13.3174, 1.11524, 13.4069)
+
+[node name="Kelp14" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(0.543834, 0, -0.839193, 0, 1, 0, 0.839193, 0, 0.543834, 14.2964, 1.11524, 9.55981)
+
+[node name="Kelp15" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(0.543834, 0, -0.839193, 0, 1, 0, 0.839193, 0, 0.543834, 14.2964, 1.11524, 3.98142)
+
+[node name="Kelp16" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(0.543834, 0, -0.839193, 0, 1, 0, 0.839193, 0, 0.543834, 13.9814, 1.11524, 4.28633)
+
+[node name="Kelp17" parent="." instance=ExtResource("7_5vvyt")]
+transform = Transform3D(0.543834, 0, -0.839193, 0, 1, 0, 0.839193, 0, 0.543834, 14.3668, 1.11524, -6.13059)
+
+[node name="kelp_3" parent="." instance=ExtResource("8_c6i3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.3958, 5.6716, -0.0427399)
+
+[node name="kelp_4" parent="." instance=ExtResource("8_c6i3y")]
+transform = Transform3D(0.167836, 0, -0.985815, 0, 1, 0, 0.985815, 0, 0.167836, 12.0958, 5.6716, 59.7207)
+
+[node name="kelp_5" parent="." instance=ExtResource("8_c6i3y")]
+transform = Transform3D(-0.998427, 0, -0.0560654, 0, 1, 0, 0.0560654, 0, -0.998427, -57.2587, 5.6716, -1.76165)
+
+[node name="kelp_6" parent="." instance=ExtResource("8_c6i3y")]
+transform = Transform3D(-0.998427, 0, -0.0560654, 0, 1, 0, 0.0560654, 0, -0.998427, -57.2587, 5.6716, 10.7272)
+
+[node name="kelp_7" parent="." instance=ExtResource("8_c6i3y")]
+transform = Transform3D(0.0232807, 0, 0.999729, 0, 1, 0, -0.999729, 0, 0.0232807, -3.85665, 5.6716, -61.0272)
+
+[node name="kelp_8" parent="." instance=ExtResource("8_c6i3y")]
+transform = Transform3D(0.0232807, 0, 0.999729, 0, 1, 0, -0.999729, 0, 0.0232807, 4.41634, 5.6716, -61.0272)
+
+[node name="Orange Coral" parent="." instance=ExtResource("9_c2ibq")]
+transform = Transform3D(4.1394, -0.700013, 2.71577, 0.585291, 4.95076, 0.383996, -2.74278, 0, 4.18057, 14.8479, 1.09878, -8.66401)
+
+[node name="Orange Coral2" parent="." instance=ExtResource("9_c2ibq")]
+transform = Transform3D(3.90347, -0.69771, 3.04567, 1.75042, 4.52547, -1.2067, -2.58824, 2.00831, 3.77727, 14.8181, 3.60468, -14.8046)
+
+[node name="Orange Coral3" parent="." instance=ExtResource("9_c2ibq")]
+transform = Transform3D(4.1394, -0.700013, 2.71577, 0.585291, 4.95076, 0.383996, -2.74278, 0, 4.18057, -0.857567, 1.09878, -15.8042)
+
+[node name="Orange Coral4" parent="." instance=ExtResource("9_c2ibq")]
+transform = Transform3D(4.1394, -0.700013, 2.71577, 0.585291, 4.95076, 0.383996, -2.74278, 0, 4.18057, 1.78088, 1.09878, -15.8042)
+
+[node name="Orange Coral5" parent="." instance=ExtResource("9_c2ibq")]
+transform = Transform3D(4.1394, -0.700013, 2.71577, 0.585291, 4.95076, 0.383996, -2.74278, 0, 4.18057, 13.6986, 1.09878, -1.79455)
+
+[node name="Orange Coral6" parent="." instance=ExtResource("9_c2ibq")]
+transform = Transform3D(4.1394, -0.700013, 2.71577, 0.585291, 4.95076, 0.383996, -2.74278, 0, 4.18057, -12.5746, 1.09878, 0.624519)
+
+[node name="Orange Coral7" parent="." instance=ExtResource("9_c2ibq")]
+transform = Transform3D(4.1394, -0.700013, 2.71577, 0.585291, 4.95076, 0.383996, -2.74278, 0, 4.18057, -12.5746, 1.09878, 9.33774)
+
+[node name="Orange Coral8" parent="." instance=ExtResource("9_c2ibq")]
+transform = Transform3D(4.1394, -0.700013, 2.71577, 0.585291, 4.95076, 0.383996, -2.74278, 0, 4.18057, 5.66583, 1.09878, 15.7513)
+
 [node name="SpawnPath" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("5")
@@ -165,6 +319,7 @@ offset_left = 15.0
 offset_top = 606.0
 offset_right = 435.0
 offset_bottom = 637.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.980392)
 theme_override_fonts/font = ExtResource("6_3dxm6")
 theme_override_font_sizes/font_size = 23
 text = "ชื่อ นายญาณาธร บุญลือ รหัสนักศึกษา 663380033-8 สาขา AI sec.2"
@@ -174,6 +329,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.447059)
 
 [node name="Label" type="Label" parent="UserInterface/Retry"]
